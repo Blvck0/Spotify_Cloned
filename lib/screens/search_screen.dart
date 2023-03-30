@@ -19,7 +19,7 @@ class _SearchScreenState extends State<SearchScreen> {
           padding: EdgeInsets.all(getProportionateScreenWidth(20)),
           child: Column(
             children: [
-              SizedBox(height: getProportionateScreenHeight(30)),
+              SizedBox(height: getProportionateScreenHeight(50)),
               const HeadingText(
                 label: "Search",
               ),
