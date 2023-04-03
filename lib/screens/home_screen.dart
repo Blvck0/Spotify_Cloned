@@ -64,7 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: getProportionateScreenHeight(250)),
+              SizedBox(height: getProportionateScreenHeight(20)),
+              const GridHome(),
+              SizedBox(height: getProportionateScreenHeight(20)),
               Padding(
                 padding: EdgeInsets.all(getProportionateScreenWidth(10)),
                 child: Text(
@@ -124,6 +126,82 @@ class HomeIconButton extends StatelessWidget {
         weight: getProportionateScreenWidth(20),
         color: Colors.white,
       ),
+    );
+  }
+}
+
+class GridHome extends StatefulWidget {
+  const GridHome({super.key});
+
+  @override
+  State<GridHome> createState() => _GridHomeState();
+}
+
+class _GridHomeState extends State<GridHome> {
+  final List<Map<String, dynamic>> gridMap = [
+    {
+      "title": "Timeless",
+      "image": "",
+    },
+    {
+      "title": "Grime Mix",
+      "image": "",
+    },
+    {
+      "title": "Locked In",
+      "image": "",
+    },
+    {
+      "title": "Gbedu",
+      "image": "",
+    },
+    {
+      "title": "This is \n Odumodublvck",
+      "image": "",
+    },
+    {
+      "title": "Memory Card",
+      "image": "",
+    },
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: getProportionateScreenWidth(10),
+        mainAxisSpacing: getProportionateScreenWidth(10),
+        mainAxisExtent: getProportionateScreenWidth(80),
+      ),
+      itemCount: gridMap.length,
+      itemBuilder: (_, index) {
+        return Container(
+          decoration: BoxDecoration(
+            color: Colors.grey.shade800,
+            borderRadius: BorderRadius.circular(getProportionateScreenWidth(5)),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(getProportionateScreenWidth(10)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(width: getProportionateScreenWidth(5)),
+                Text(
+                  "${gridMap.elementAt(index)['title']}",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: getProportionateScreenWidth(14),
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
