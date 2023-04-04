@@ -72,9 +72,12 @@ class _SplashScreenState extends State<SplashScreen>
       backgroundColor: Palette.kBackgroundColor,
       body: Center(
         child: Image(
+          color: Colors.black,
           height: getProportionateScreenHeight(150),
           width: getProportionateScreenWidth(200),
-          image: const AssetImage('images/spotify_logo.png'),
+          image: const AssetImage(
+            'images/spotify_logo.png',
+          ),
         ),
       ),
     );
