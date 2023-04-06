@@ -51,3 +51,36 @@ class SongCards extends StatelessWidget {
     );
   }
 }
+
+class LibrarySubCards extends StatelessWidget {
+  final String label;
+  const LibrarySubCards({
+    required this.label,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(20),
+        vertical: getProportionateScreenHeight(10),
+      ),
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 1,
+          color: Colors.white,
+          style: BorderStyle.solid,
+        ),
+        borderRadius: BorderRadius.circular(getProportionateScreenWidth(30)),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: getProportionateScreenWidth(12),
+        ),
+      ),
+    );
+  }
+}

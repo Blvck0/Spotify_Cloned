@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_cloned/screens/library_screen.dart';
-import 'package:spotify_cloned/screens/premium_screen.dart';
 import 'package:spotify_cloned/screens/search_screen.dart';
 import 'package:spotify_cloned/utilities/size_config.dart';
 
@@ -19,7 +18,7 @@ class _DashboardState extends State<Dashboard> {
     const HomeScreen(),
     const SearchScreen(),
     const LibraryScreen(),
-    const PremiumScreen(),
+    // const PremiumScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -27,8 +26,11 @@ class _DashboardState extends State<Dashboard> {
       children: [
         Scaffold(
           backgroundColor: Colors.transparent,
-          bottomNavigationBar: SizedBox(
+          bottomNavigationBar: Container(
+            padding: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenWidth(25)),
             height: getProportionateScreenHeight(100),
+
             // decoration: const BoxDecoration(
             // color: Colors.transparent,
             // backgroundBlendMode: BlendMode.dstOut,
@@ -67,14 +69,14 @@ class _DashboardState extends State<Dashboard> {
                   // ),
                   label: 'Your Library',
                 ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.subscriptions_rounded),
+                // BottomNavigationBarItem(
+                //   icon: Icon(Icons.subscriptions_rounded),
 
-                  // ImageIcon(
-                  //   AssetImage('images/transaction.png'),
-                  // ),
-                  label: 'Premium',
-                ),
+                //   // ImageIcon(
+                //   //   AssetImage('images/transaction.png'),
+                //   // ),
+                //   label: 'Premium',
+                // ),
               ],
             ),
           ),
