@@ -52,6 +52,51 @@ class SongCards extends StatelessWidget {
   }
 }
 
+class LibraryCards extends StatelessWidget {
+  final String label;
+  final Color? color;
+  const LibraryCards({
+    super.key,
+    required this.label,
+    this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        CircleAvatar(
+          backgroundColor: color,
+          radius: getProportionateScreenWidth(40),
+        ),
+        SizedBox(width: getProportionateScreenWidth(20)),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              label,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: getProportionateScreenWidth(16),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: getProportionateScreenHeight(5)),
+            Text(
+              "Artist",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: getProportionateScreenWidth(12),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
 class LibrarySubCards extends StatelessWidget {
   final String label;
   const LibrarySubCards({

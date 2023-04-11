@@ -66,7 +66,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                     "Most recent",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: getProportionateScreenWidth(16),
+                      fontSize: getProportionateScreenWidth(12),
                     ),
                   ),
                   const Spacer(),
@@ -134,6 +134,21 @@ class _LibraryScreenState extends State<LibraryScreen> {
                     ],
                   ),
                 ],
+              ),
+              SizedBox(height: getProportionateScreenHeight(20)),
+              const LibraryCards(
+                label: 'Burna Boy',
+                color: Colors.red,
+              ),
+              SizedBox(height: getProportionateScreenHeight(20)),
+              const LibraryCards(
+                label: 'Seyi Vibez',
+                color: Colors.white,
+              ),
+              SizedBox(height: getProportionateScreenHeight(20)),
+              const LibraryCards(
+                label: 'Wizkid',
+                color: Colors.amber,
               ),
             ],
           ),

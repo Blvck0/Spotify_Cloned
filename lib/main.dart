@@ -72,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen>
       backgroundColor: Palette.kBackgroundColor,
       body: Center(
         child: Image(
-          color: Colors.black,
+          color: Colors.green,
           height: getProportionateScreenHeight(150),
           width: getProportionateScreenWidth(200),
           image: const AssetImage(
